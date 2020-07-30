@@ -1,6 +1,16 @@
 <template>
   <div class="quehaceres">
-    <h1>This is where our TODO app will be.</h1>
+    <QueHacer todo="ponte hacer que hacer" />
   </div>
 </template>
-<script></script>
+<script>
+// @ is an alias to /src
+import QueHacer from '@/components/QueHacer.vue'
+
+export default {
+  name: 'QueHaceres',
+  components: {
+    QueHacer
+  }
+}
+</script>

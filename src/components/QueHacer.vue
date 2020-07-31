@@ -1,7 +1,11 @@
 /* eslint-disable vue/valid-template-root */
 <template>
   <div class="quehacer">
-    <p>{{ todo }}</p>
+    <p>{{ todo.text }}</p>
+    <div class="icons">
+      <div @click="$emit('complete', todo.id)">✔️</div>
+      <div @click="$emit('remove', todo.id)">🚫</div>
+    </div>
   </div>
 </template>
 
@@ -9,9 +13,20 @@
 export default {
   name: 'QueHacer',
   props: {
-    todo: String
+    todo: {
+      type: Object,
+      required: true
+    }
   }
 }
 </script>
 
-<style></style>
+<style>
+.quehacer {
+  display: flex;
+}
+
+.icons {
+  display: inline-flex;
+}
+</style>

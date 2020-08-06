@@ -4,7 +4,6 @@
       v-for="todo in todos"
       :key="todo.id"
       :todo="todo"
-      @complete="completeToDo"
       @remove="removeToDo"
     />
   </div>
@@ -42,7 +41,6 @@ export default {
   },
   methods: {
     addToDo() {},
-    completeToDo(id) {},
     removeToDo(id) {
       this.todos = this.todos.filter(todo => {
         return todo.id !== id
@@ -53,7 +51,9 @@ export default {
 </script>
 <style>
 .quehaceres {
-  width: 500px;
+  width: 320px;
   margin: auto;
+  background-color: #fffae3;
+  color: #5d576b;
 }
 </style>

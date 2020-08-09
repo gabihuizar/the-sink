@@ -1,6 +1,6 @@
 /* eslint-disable vue/valid-template-root */
 <template>
-  <div class="quehacer">
+  <div class="queHacer">
     <p>{{ todo.text }}</p>
     <div class="icons">
       <div v-on:click="toggleComplete">
@@ -68,8 +68,10 @@ export default {
 }
 </script>
 
-<style>
-.quehacer {
+<style lang="scss" scoped>
+@import './src/assets/colors.scss';
+
+.queHacer {
   display: flex;
   justify-content: space-between;
   margin-bottom: 10px;
@@ -82,6 +84,6 @@ export default {
 }
 
 svg {
-  fill: #fffae3;
+  fill: $cornflower;
 }
 </style>

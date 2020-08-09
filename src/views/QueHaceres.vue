@@ -53,7 +53,7 @@ export default {
 .quehaceres {
   width: 320px;
   margin: auto;
-  background-color: #fffae3;
-  color: #5d576b;
+  background-color: #5d576b;
+  color: #fffae3;
 }
 </style>

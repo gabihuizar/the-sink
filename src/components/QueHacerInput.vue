@@ -1,12 +1,14 @@
 <template>
   <div class="queHacerInput">
     <input
+      v-model="newTodo"
       type="text"
       class="input"
-      :value="value"
       placeholder="Nuevo que hacer"
     />
-    <button>Add Que Hacer</button>
+    <button v-on:click="$emit('add', newTodo)">
+      Add Que Hacer
+    </button>
   </div>
 </template>
 

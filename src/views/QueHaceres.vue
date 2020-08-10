@@ -1,6 +1,6 @@
 <template>
   <div class="quehaceres">
-    <QueHacerInput ßv-model="newTodoText" />
+    <QueHacerInput @add="addToDo" />
     <QueHacer
       v-for="todo in todos"
       :key="todo.id"
@@ -43,7 +43,16 @@ export default {
     }
   },
   methods: {
-    addToDo() {},
+    addToDo(todoText) {
+      const trimmedText = todoText.trim()
+      if (trimmedText) {
+        this.todos.push({
+          id: nextTodoId++,
+          text: trimmedText
+        })
+        this.newTodoText = ''
+      }
+    },
     removeToDo(id) {
       this.todos = this.todos.filter(todo => {
         return todo.id !== id

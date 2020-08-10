@@ -1,18 +1,21 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <h1>Bienvenidos al <span>Sink</span> de los Mejiñedas</h1>
+    <h2>Donde siempre estan los trastes sucios, pero llenas las barrigas</h2>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
 
 export default {
-  name: 'Home',
-  components: {
-    HelloWorld
-  }
+  name: 'Home'
 }
 </script>
+<style lang="scss" scoped>
+@import './src/assets/colors.scss';
+
+span {
+  color: $brink-pink;
+}
+</style>

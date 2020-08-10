@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/">Home</router-link> |
+      <router-link to="/">Hogar</router-link> |
       <router-link to="/quehaceres">Que Haceres</router-link>
     </div>
     <router-view />
@@ -16,7 +16,7 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: $cornflower;
   background-color: $dark-purple-grey;
   width: 100%;
   height: 100%;
@@ -31,7 +31,7 @@
 
 #nav a {
   font-weight: bold;
-  color: #2c3e50;
+  color: $cornflower;
 }
 
 #nav a.router-link-exact-active {

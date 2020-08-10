@@ -35,6 +35,12 @@ export default {
   margin-bottom: 10px;
 }
 
+.input:focus {
+  outline: none !important;
+  border: 1px solid $brink-pink;
+  box-shadow: 0 0 10px $cornflower;
+}
+
 button {
   padding: 10px 10px;
   background-color: $brink-pink;

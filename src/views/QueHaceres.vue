@@ -1,6 +1,10 @@
 <template>
   <div class="quehaceres">
-    <QueHacerInput v-model="newTodoText" />
+    <SinkInput
+      v-model="newTodoText"
+      placeholder="Nuevo que hacer"
+      @enter="addToDo"
+    />
     <SinkButton text="Add Que Hacer" @clicked="addToDo" />
     <QueHacer
       v-for="todo in todos"
@@ -14,7 +18,7 @@
 <script>
 // @ is an alias to /src
 import QueHacer from '@/components/QueHacer.vue'
-import QueHacerInput from '@/components/QueHacerInput.vue'
+import SinkInput from '@/components/SinkInput.vue'
 import SinkButton from '@/components/SinkButton.vue'
 
 let nextTodoId = 1
@@ -22,7 +26,7 @@ let nextTodoId = 1
 export default {
   name: 'QueHaceres',
   components: {
-    QueHacerInput,
+    SinkInput,
     SinkButton,
     QueHacer
   },

@@ -1,18 +1,16 @@
 <template>
-  <div class="queHacerInput">
-    <input
-      type="text"
-      class="input"
-      :value="value"
-      v-on:input="$emit('input', $event.target.value)"
-      placeholder="Nuevo que hacer"
-    />
-  </div>
+  <input
+    type="text"
+    class="input"
+    :value="value"
+    v-on:input="$emit('input', $event.target.value)"
+    v-on:keyup.enter="$emit('enter')"
+  />
 </template>
 
 <script>
 export default {
-  name: 'QueHacerInput',
+  name: 'SinkInput',
   props: {
     value: {
       type: String,
@@ -25,13 +23,10 @@ export default {
 <style lang="scss" scoped>
 @import './src/assets/colors.scss';
 
-.queHacerInput {
-  margin-bottom: 10px;
-}
-
 .input {
   width: 100%;
   padding: 8px 10px;
+  margin-bottom: 10px;
 }
 
 .input:focus {

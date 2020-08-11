@@ -1,6 +1,7 @@
 <template>
   <div class="quehaceres">
-    <QueHacerInput @add="addToDo" />
+    <QueHacerInput v-model="newTodoText" />
+    <SinkButton text="Add Que Hacer" @clicked="addToDo" />
     <QueHacer
       v-for="todo in todos"
       :key="todo.id"
@@ -14,6 +15,7 @@
 // @ is an alias to /src
 import QueHacer from '@/components/QueHacer.vue'
 import QueHacerInput from '@/components/QueHacerInput.vue'
+import SinkButton from '@/components/SinkButton.vue'
 
 let nextTodoId = 1
 
@@ -21,6 +23,7 @@ export default {
   name: 'QueHaceres',
   components: {
     QueHacerInput,
+    SinkButton,
     QueHacer
   },
   data: () => {
@@ -43,8 +46,8 @@ export default {
     }
   },
   methods: {
-    addToDo(todoText) {
-      const trimmedText = todoText.trim()
+    addToDo() {
+      const trimmedText = this.newTodoText.trim()
       if (trimmedText) {
         this.todos.push({
           id: nextTodoId++,

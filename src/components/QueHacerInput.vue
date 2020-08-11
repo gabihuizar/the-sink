@@ -1,14 +1,12 @@
 <template>
   <div class="queHacerInput">
     <input
-      v-model="newTodo"
       type="text"
       class="input"
+      :value="value"
+      v-on:input="$emit('input', $event.target.value)"
       placeholder="Nuevo que hacer"
     />
-    <button v-on:click="$emit('add', newTodo)">
-      Add Que Hacer
-    </button>
   </div>
 </template>
 
@@ -34,20 +32,11 @@ export default {
 .input {
   width: 100%;
   padding: 8px 10px;
-  margin-bottom: 10px;
 }
 
 .input:focus {
   outline: none !important;
   border: 1px solid $brink-pink;
   box-shadow: 0 0 10px $cornflower;
-}
-
-button {
-  padding: 10px 10px;
-  background-color: $brink-pink;
-  color: $cornflower;
-  border: none;
-  cursor: pointer;
 }
 </style>

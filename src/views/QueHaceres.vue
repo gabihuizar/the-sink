@@ -36,21 +36,25 @@ export default {
       todos: [
         {
           id: nextTodoId++,
-          text: 'go to lowes'
+          text: 'go to lowes',
+          complete: false
         },
         {
           id: nextTodoId++,
-          text: 'Learn about single-file components'
+          text: 'Learn about single-file components',
+          complete: false
         },
         {
           id: nextTodoId++,
-          text: 'mop & sweep'
+          text: 'mop & sweep',
+          complete: false
         }
       ]
     }
   },
   methods: {
     addToDo() {
+      // TODO: make api call to add todo
       const trimmedText = this.newTodoText.trim()
       if (trimmedText) {
         this.todos.push({
@@ -61,6 +65,7 @@ export default {
       }
     },
     removeToDo(id) {
+      // TODO: make api call to remove todo
       this.todos = this.todos.filter(todo => {
         return todo.id !== id
       })

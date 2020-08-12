@@ -5,7 +5,7 @@
     <div class="icons">
       <div v-on:click="toggleComplete">
         <svg
-          v-if="!complete"
+          v-if="!todo.complete"
           xmlns="http://www.w3.org/2000/svg"
           height="24"
           viewBox="0 0 24 24"
@@ -49,11 +49,6 @@
 <script>
 export default {
   name: 'QueHacer',
-  data: () => {
-    return {
-      complete: false
-    }
-  },
   props: {
     todo: {
       type: Object,
@@ -62,7 +57,8 @@ export default {
   },
   methods: {
     toggleComplete() {
-      this.complete = !this.complete
+      this.todo.complete = !this.todo.complete
+      // TODO: make api call to update todo here?
     }
   }
 }
